@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, bashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 // Components
 import App from './App';
@@ -10,7 +10,7 @@ import Teachers from './components/Teachers';
 import About from './components/About';
 
 const route = (
-  <Router history={bashHistory}>
+  <Router history={browserHistory}>
     <Route component={App}>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />

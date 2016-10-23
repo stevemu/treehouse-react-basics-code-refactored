@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import fallback from 'express-history-api-fallback'
 
 var bodyParser = require('body-parser');
 
@@ -15,6 +16,7 @@ app.use(express.static(PATH_DIST));
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
+app.use(fallback(path.resolve(__dirname, '../client/index.html'))); // when requested route does not exist here in express app, return this file; for react.js route when using history.
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
