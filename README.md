@@ -1,4 +1,4 @@
-# Qi's React.js boilerplate
+# treehouse react router basics code refactered
 
 ## Features
 

@@ -5,7 +5,6 @@ import { Router, Route, browserHistory, IndexRedirect, IndexRoute } from 'react-
 import App from './App';
 import Home from './components/Home';
 import Courses from './components/Courses';
-import Featured from './components/Featured';
 import Teachers from './components/Teachers';
 import About from './components/About';
 
@@ -13,6 +12,7 @@ import About from './components/About';
 // import CSS from './components/courses/CSS';
 // import HTML from './components/courses/HTML';
 import CourseContainer from './components/courses/CourseContainer';
+import Featured from './components/Featured';
 
 import NotFound from './components/NotFound';
 import CourseList from './data/courses';
@@ -28,7 +28,7 @@ const route = (
         <Route path="/courses/html" component={CourseContainer} data={CourseList.HTML} />
         <Route path="/courses/javascript" component={CourseContainer} data={CourseList.JS}/>
       </Route>
-      <Route path="/featured" component={Featured} />
+      <Route path="/featured/:name/:specialty" component={Featured} />
       <Route path="/teachers" component={Teachers} />
       <Route path="*" component={NotFound}/>
     </Route>
